@@ -1,4 +1,4 @@
-package secondTaskHW;
+package ITMO.secondTaskHW;
 
 import java.util.Scanner;
 
