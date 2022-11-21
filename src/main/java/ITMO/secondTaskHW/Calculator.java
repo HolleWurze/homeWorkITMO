@@ -50,16 +50,16 @@ public class Calculator {
         return a * b;
     }
 
-    static int div(int a, int b) {
-        return (a / b) + (a % b);
+    static double div(int a, int b) {
+        return (double) a / b;
     }
 
     static double div(double a, double b) {
         return a / b;
     }
 
-    static long div(long a, long b) {
-        return (a / b) + (a % b);
+    static double div(long a, long b) {
+        return (double) a / b;
     }
 
     static int sub(int a, int b) {
