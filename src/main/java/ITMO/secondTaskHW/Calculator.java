@@ -25,63 +25,53 @@ public class Calculator {
             }
         } else System.err.println("Нет такого оператора!");
     }
+
     static int sum(int a, int b) {
-        int q = a + b;
-        return q;
+        return a + b;
     }
 
     static double sum(double a, double b) {
-        double q = a + b;
-        return q;
+        return a + b;
     }
 
     static long sum(long a, long b) {
-        long q = a + b;
-        return q;
+        return a + b;
     }
 
     static int mult(int a, int b) {
-        int q = a * b;
-        return q;
+        return a * b;
     }
 
     static double mult(double a, double b) {
-        double q = a * b;
-        return q;
+        return a * b;
     }
 
     static long mult(long a, long b) {
-        long q = a * b;
-        return q;
+        return a * b;
     }
 
     static int div(int a, int b) {
-        int q = a / b;
-        return q;
+        return a / b;
+
     }
 
     static double div(double a, double b) {
-        double q = a / b;
-        return q;
+        return a / b;
     }
 
     static long div(long a, long b) {
-        long q = a / b;
-        return q;
+        return a / b;
     }
 
     static int sub(int a, int b) {
-        int q = a - b;
-        return q;
+        return a - b;
     }
 
     static double sub(double a, double b) {
-        double q = a - b;
-        return q;
+        return a - b;
     }
 
     static long sub(long a, long b) {
-        long q = a - b;
-        return q;
+        return a - b;
     }
 }
