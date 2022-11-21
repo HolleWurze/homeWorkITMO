@@ -51,8 +51,7 @@ public class Calculator {
     }
 
     static int div(int a, int b) {
-        return a / b;
-
+        return (a / b) + (a % b);
     }
 
     static double div(double a, double b) {
@@ -60,7 +59,7 @@ public class Calculator {
     }
 
     static long div(long a, long b) {
-        return a / b;
+        return (a / b) + (a % b);
     }
 
     static int sub(int a, int b) {
