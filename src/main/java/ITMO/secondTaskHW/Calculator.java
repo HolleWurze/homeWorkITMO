@@ -25,7 +25,6 @@ public class Calculator {
             }
         } else System.err.println("Нет такого оператора!");
     }
-
     static int sum(int a, int b) {
         int q = a + b;
         return q;
