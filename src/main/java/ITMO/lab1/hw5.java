@@ -1,4 +1,4 @@
-package ITMO.thirstTaskHW;
+package ITMO.lab1;
 
 import java.util.Scanner;
 
