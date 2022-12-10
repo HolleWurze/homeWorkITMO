@@ -12,11 +12,15 @@ public class CheckSum {
         System.out.println("Введите третье число: ");
         int c = scanner.nextInt();
 
+        CheckSumMethod(a, b, c);
+        scanner.close();
+    }
+
+    private static void CheckSumMethod(int a, int b, int c) {
         if (a + b == c) {
             System.out.println("Результат: " + true);
         } else {
             System.out.println("Результат: " + false);
         }
-        scanner.close();
     }
 }

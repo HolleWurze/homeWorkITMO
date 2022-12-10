@@ -33,7 +33,7 @@ public class MergeSort {
         mergeSort(leftSide, midOfArray);
         mergeSort(rightSide, array.length - midOfArray);
 
-        merge(array, leftSide, rightSide,arrayLength - midOfArray, midOfArray);
+        merge(array, leftSide, rightSide, arrayLength - midOfArray, midOfArray);
     }
 
     private static void merge(int[] array, int[] leftSide, int[] rightSide, int rightIndex, int leftIndex) {
@@ -53,6 +53,5 @@ public class MergeSort {
         while (jIndexOfNum < rightIndex) {
             array[kIndexOfNum++] = rightSide[jIndexOfNum++];
         }
-
     }
 }

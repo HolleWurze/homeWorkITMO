@@ -9,6 +9,10 @@ public class FindingNumOneOrThree {
             array[i] = (int) (Math.random() * 11);
         }
         System.out.println(Arrays.toString(array));
+        FindingNumOneOrThreeMethod(array);
+    }
+
+    private static void FindingNumOneOrThreeMethod(int[] array) {
         int f = 0;
         for (int i = 0; i < array.length; i++) {
             if ((array[i] == 1) || (array[i] == 3)) {

@@ -7,6 +7,11 @@ public class CheckDiv {
         int[] array3 = new int[33];
         int[] array5 = new int[20];
         int[] array3_5 = new int[6];
+
+        CheckDivMethod(array3, array5, array3_5);
+    }
+
+    private static void CheckDivMethod(int[] array3, int[] array5, int[] array3_5) {
         int a3 = 0;
         int a5 = 0;
         int a3_5 = 0;

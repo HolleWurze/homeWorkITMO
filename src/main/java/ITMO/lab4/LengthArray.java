@@ -9,13 +9,17 @@ public class LengthArray {
         System.out.println("Введите длину массива: ");
         int a = scanner.nextInt();
         System.out.println("Array length = " + a);
-        int[] array = new int[a];
 
+        FillingAnArrayOfArbitraryLengthMethod(scanner, a);
+        scanner.close();
+    }
+
+    private static void FillingAnArrayOfArbitraryLengthMethod(Scanner scanner, int a) {
+        int[] array = new int[a];
         for (int i = 0; i < a; i++) {
             System.out.println("Введите число: ");
             array[i] = scanner.nextInt();
         }
         System.out.println(Arrays.toString(array));
-        scanner.close();
     }
 }

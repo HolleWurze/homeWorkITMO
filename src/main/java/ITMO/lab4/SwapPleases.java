@@ -2,7 +2,7 @@ package ITMO.lab4;
 
 import java.util.Arrays;
 
-public class SwapPlasesMethod {
+public class SwapPleases {
     public static void main(String[] args) {
         int[] array = new int[10];
         for (int i = 0; i < array.length; i++) {

@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class SortArray {
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите первое число массива:");
         int a = scanner.nextInt();
@@ -18,9 +17,15 @@ public class SortArray {
         int e = scanner.nextInt();
         System.out.println("Введите шестое число массива:");
         int f = scanner.nextInt();
+
+        SortArrayMethod(a, b, c, d, e, f);
+        scanner.close();
+    }
+
+    private static void SortArrayMethod(int a, int b, int c, int d, int e, int f) {
         int[] array = new int[]{a, b, c, d, e, f};
         boolean itsTrue = false;
-        for (int i = 0; i < array.length-1; i++) {
+        for (int i = 0; i < array.length - 1; i++) {
             if (array[i] < array[i + 1]) {
                 itsTrue = true;
             } else {
@@ -33,6 +38,5 @@ public class SortArray {
         } else {
             System.err.println("Please try again");
         }
-        scanner.close();
     }
 }

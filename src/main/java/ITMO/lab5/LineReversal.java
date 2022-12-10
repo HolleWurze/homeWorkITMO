@@ -9,8 +9,12 @@ public class LineReversal {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
         System.out.println(str);
+        LineReversalMethod(str);
+        scanner.close();
+    }
+
+    private static void LineReversalMethod(String str) {
         StringBuilder stringBuilder = new StringBuilder(String.valueOf(str));
         System.out.println(stringBuilder.reverse());
-        scanner.close();
     }
 }

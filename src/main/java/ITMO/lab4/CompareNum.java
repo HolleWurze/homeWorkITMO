@@ -12,11 +12,15 @@ public class CompareNum {
         System.out.println("Введите третье число: ");
         int c = scanner.nextInt();
 
+        CompareNumMethod(a, b, c);
+        scanner.close();
+    }
+
+    private static void CompareNumMethod(int a, int b, int c) {
         if ((a < b) && (b < c)) {
             System.out.println("Результат: " + true);
         } else {
             System.out.println("Результат: " + false);
         }
-        scanner.close();
     }
 }
