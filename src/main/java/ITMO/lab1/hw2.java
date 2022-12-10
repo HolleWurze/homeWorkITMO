@@ -1,4 +1,4 @@
-package ITMO.thirstTaskHW;
+package ITMO.lab1;
 
 public class hw2 {
     public static void main(String[] args) {

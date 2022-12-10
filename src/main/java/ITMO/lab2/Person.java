@@ -1,4 +1,4 @@
-package ITMO.secondTaskHW;
+package ITMO.lab2;
 
 public class Person {
     String name;

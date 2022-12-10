@@ -1,4 +1,4 @@
-package ITMO.thirdTaskHW;
+package ITMO.lab3;
 
 public class House {
     public static void main(String[] args) {
