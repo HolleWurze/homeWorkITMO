@@ -6,7 +6,7 @@ public class HeirClass extends Major {
     }
 
     @Override
-    public String getName() {
-        return super.getName() + " * Heir *";
+    public void Print() {
+        System.out.println(name);
     }
 }

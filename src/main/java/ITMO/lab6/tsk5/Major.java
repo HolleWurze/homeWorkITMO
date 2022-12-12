@@ -9,11 +9,7 @@ public class Major {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public String getName() {
-        return name;
+    public void Print() {
+        System.out.println(age);
     }
 }
