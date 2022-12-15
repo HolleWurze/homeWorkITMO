@@ -1,21 +1,21 @@
 package ITMO.Threads;
 
+import java.util.ArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Counter counter = new Counter();
+        ExecutorService executorService = Executors.newCachedThreadPool();
         for (int i = 0; i < 100; i++) {
-            Thread thread = new Threads_1tsk();
-            thread.start();
-            CountNum(thread, counter);
+            RunThread runThread = new RunThread(counter);
+            executorService.execute(runThread);
         }
-        System.out.println(counter.getCount());
-    }
-
-    private static void CountNum(Thread thread, Counter counter) {
-        for (int i = 0; i < 1000; i++) {
-            counter.increment();
+        executorService.shutdown();
+        while (!executorService.awaitTermination(50, TimeUnit.MILLISECONDS)) {
         }
+        System.out.println(counter.count);
     }
-
-
 }

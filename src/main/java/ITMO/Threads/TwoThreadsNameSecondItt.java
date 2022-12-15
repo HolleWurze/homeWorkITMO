@@ -1,26 +1,41 @@
 package ITMO.Threads;
 
 public class TwoThreadsNameSecondItt extends Thread {
-    public static void main(String[] args) {
-        Object object = new Object();
-        methodSynchronizedThreads(object);
+    private String name;
+
+    public TwoThreadsNameSecondItt(String name) {
+        this.name = name;
     }
 
-    public static void methodSynchronizedThreads(Object obj) {
-        for (int i = 0; i < 100; i++) {
-            takesNameThreads(i);
+    public void run() {
+        while (true) {
+            synchronized (this) {
+                System.out.println(name);
+                try {
+                    wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
+}
 
-    private static void takesNameThreads(int i) {
-        Thread thread = new Thread();
-        synchronized (thread) {
-            if (i % 2 == 0) {
-                thread.setName("Второй поток");
-            } else {
-                thread.setName("Первый поток");
+class ThreadsMain {
+    public static void main(String[] args) {
+        TwoThreadsNameSecondItt t1 = new TwoThreadsNameSecondItt("Первый поток");
+        TwoThreadsNameSecondItt t2 = new TwoThreadsNameSecondItt("Второй поток");
+
+        t1.start();
+        t2.start();
+
+        while (true) {
+            synchronized (t1) {
+                t1.notify();
             }
-            System.out.println(thread.getName());
+            synchronized (t2) {
+                t2.notify();
+            }
         }
     }
 }
