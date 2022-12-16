@@ -1,40 +1,40 @@
 package ITMO.Threads;
 
-public class TwoThreadsNameSecondItt extends Thread {
-    private String name;
+public class TwoThreadsNameSecondItt {
+    private static final Object lock = new Object();
+    private static boolean toggle = true;
 
-    public TwoThreadsNameSecondItt(String name) {
-        this.name = name;
-    }
 
-    public void run() {
-        while (true) {
-            synchronized (this) {
-                System.out.println(name);
-                try {
-                    wait();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-}
-
-class ThreadsMain {
     public static void main(String[] args) {
-        TwoThreadsNameSecondItt t1 = new TwoThreadsNameSecondItt("Первый поток");
-        TwoThreadsNameSecondItt t2 = new TwoThreadsNameSecondItt("Второй поток");
+        Thread t1 = new Thread(new MyThread("Первый поток"));
+        Thread t2 = new Thread(new MyThread("Второй поток"));
 
         t1.start();
         t2.start();
+    }
 
-        while (true) {
-            synchronized (t1) {
-                t1.notify();
-            }
-            synchronized (t2) {
-                t2.notify();
+    static class MyThread implements Runnable {
+        private String name;
+
+        public MyThread(String name) {
+            this.name = name;
+        }
+
+        @Override
+        public void run() {
+            while (true) {
+                synchronized (lock) {
+                    while (toggle != name.equals("Первый поток")) {
+                        try {
+                            lock.wait();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    System.out.println(name);
+                    toggle = !toggle;
+                    lock.notifyAll();
+                }
             }
         }
     }
